@@ -1,0 +1,26 @@
+# RewriteEngine On
+# RewriteBase /vps/
+
+# # Allow access to static files
+# <FilesMatch "\.(js|css|jpg|png|gif|webp|svg)$">
+#   Require all granted
+# </FilesMatch>
+
+# # Auto-append .php for requests
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME}.php -f
+# RewriteRule ^(.*)$ $1.php [NC,L]
+
+
+RewriteEngine On
+RewriteBase /
+
+# Allow access to static files
+<FilesMatch "\.(js|css|jpg|png|gif|webp|svg)$">
+  Require all granted
+</FilesMatch>
+
+# Auto-append .php for requests
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
